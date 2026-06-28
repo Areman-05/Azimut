@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Container } from "@/components/layout";
+import { Container } from "./Container";
 import { Button } from "@/components/ui";
 import { mainNavigation, siteConfig } from "@/config";
 import { cn } from "@/lib/cn";
