@@ -1,9 +1,10 @@
-import { Hero } from "@/components/home";
+import { Hero, ServicesPreview } from "@/components/home";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <ServicesPreview />
     </>
   );
 }
