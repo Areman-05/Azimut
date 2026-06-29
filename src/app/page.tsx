@@ -1,11 +1,21 @@
-import { Hero, ServicesPreview, StatsStrip, ProcessSection } from "@/components/home";
+import {
+  Hero,
+  ServicesPreview,
+  StatsStrip,
+  ProcessSection,
+  FeaturedProjects,
+} from "@/components/home";
+import { getFeaturedProjects } from "@/lib/projects";
 
 export default function Home() {
+  const featured = getFeaturedProjects();
+
   return (
     <>
       <Hero />
       <StatsStrip />
       <ServicesPreview />
+      <FeaturedProjects projects={featured} />
       <ProcessSection />
     </>
   );
