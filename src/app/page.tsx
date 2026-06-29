@@ -1,4 +1,4 @@
-import { Hero, ServicesPreview, StatsStrip } from "@/components/home";
+import { Hero, ServicesPreview, StatsStrip, ProcessSection } from "@/components/home";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero />
       <StatsStrip />
       <ServicesPreview />
+      <ProcessSection />
     </>
   );
 }
