@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TeamGrid } from "@/components/about";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Button } from "@/components/ui";
@@ -79,6 +80,8 @@ export default function NosotrosPage() {
           </div>
         </Container>
       </Section>
+
+      <TeamGrid />
 
       <Section variant="sand" id="sostenibilidad">
         <Container>
