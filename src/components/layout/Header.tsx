@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "./Container";
+import { NavLink } from "./NavLink";
 import { Button } from "@/components/ui";
 import { mainNavigation, siteConfig } from "@/config";
 import { cn } from "@/lib/cn";
@@ -24,13 +25,9 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
           {mainNavigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm uppercase tracking-widest text-muted transition-colors hover:text-charcoal"
-            >
+            <NavLink key={item.href} href={item.href}>
               {item.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -62,16 +59,16 @@ export function Header() {
           >
             <nav className="flex flex-col px-6 py-6" aria-label="Móvil">
               {mainNavigation.map((item) => (
-                <Link
+                <NavLink
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "border-b border-border-light py-4 text-sm uppercase tracking-widest text-charcoal",
+                    "border-b border-border-light py-4",
                   )}
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               ))}
               <div className="pt-6">
                 <Button href="/contacto" className="w-full">
