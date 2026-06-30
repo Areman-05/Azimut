@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Button } from "@/components/ui";
-import { cn } from "@/lib/cn";
+import { Button, FormField, Input, Select, Textarea } from "@/components/ui";
 
 type FormData = {
   name: string;
@@ -22,11 +21,11 @@ const initialForm: FormData = {
   message: "",
 };
 
-const projectTypes = [
-  "Arquitectura modular",
-  "Construcción sostenible",
-  "Reforma premium",
-  "Otro",
+const projectTypeOptions = [
+  { value: "Arquitectura modular", label: "Arquitectura modular" },
+  { value: "Construcción sostenible", label: "Construcción sostenible" },
+  { value: "Reforma premium", label: "Reforma premium" },
+  { value: "Otro", label: "Otro" },
 ];
 
 export function ContactForm() {
@@ -54,10 +53,7 @@ export function ContactForm() {
     setSubmitted(true);
   }
 
-  function handleChange(
-    field: keyof FormData,
-    value: string,
-  ) {
+  function handleChange(field: keyof FormData, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }));
@@ -81,104 +77,56 @@ export function ContactForm() {
     );
   }
 
-  const inputClass =
-    "w-full border border-border-light bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-terracotta";
-
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       <div className="grid gap-6 sm:grid-cols-2">
-        <div>
-          <label htmlFor="name" className="mb-2 block text-xs uppercase tracking-widest">
-            Nombre *
-          </label>
-          <input
+        <FormField label="Nombre" htmlFor="name" error={errors.name} required>
+          <Input
             id="name"
-            type="text"
             value={form.name}
             onChange={(e) => handleChange("name", e.target.value)}
-            className={cn(inputClass, errors.name && "border-red-500")}
-            aria-invalid={!!errors.name}
-            aria-describedby={errors.name ? "name-error" : undefined}
+            error={errors.name}
           />
-          {errors.name && (
-            <p id="name-error" className="mt-1 text-xs text-red-600">
-              {errors.name}
-            </p>
-          )}
-        </div>
-        <div>
-          <label htmlFor="email" className="mb-2 block text-xs uppercase tracking-widest">
-            Email *
-          </label>
-          <input
+        </FormField>
+        <FormField label="Email" htmlFor="email" error={errors.email} required>
+          <Input
             id="email"
             type="email"
             value={form.email}
             onChange={(e) => handleChange("email", e.target.value)}
-            className={cn(inputClass, errors.email && "border-red-500")}
-            aria-invalid={!!errors.email}
-            aria-describedby={errors.email ? "email-error" : undefined}
+            error={errors.email}
           />
-          {errors.email && (
-            <p id="email-error" className="mt-1 text-xs text-red-600">
-              {errors.email}
-            </p>
-          )}
-        </div>
+        </FormField>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <div>
-          <label htmlFor="phone" className="mb-2 block text-xs uppercase tracking-widest">
-            Teléfono
-          </label>
-          <input
+        <FormField label="Teléfono" htmlFor="phone">
+          <Input
             id="phone"
             type="tel"
             value={form.phone}
             onChange={(e) => handleChange("phone", e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label htmlFor="projectType" className="mb-2 block text-xs uppercase tracking-widest">
-            Tipo de proyecto
-          </label>
-          <select
+        </FormField>
+        <FormField label="Tipo de proyecto" htmlFor="projectType">
+          <Select
             id="projectType"
             value={form.projectType}
             onChange={(e) => handleChange("projectType", e.target.value)}
-            className={inputClass}
-          >
-            <option value="">Seleccionar...</option>
-            {projectTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-        </div>
+            options={projectTypeOptions}
+          />
+        </FormField>
       </div>
 
-      <div>
-        <label htmlFor="message" className="mb-2 block text-xs uppercase tracking-widest">
-          Mensaje *
-        </label>
-        <textarea
+      <FormField label="Mensaje" htmlFor="message" error={errors.message} required>
+        <Textarea
           id="message"
           rows={5}
           value={form.message}
           onChange={(e) => handleChange("message", e.target.value)}
-          className={cn(inputClass, "resize-none", errors.message && "border-red-500")}
-          aria-invalid={!!errors.message}
-          aria-describedby={errors.message ? "message-error" : undefined}
+          error={errors.message}
         />
-        {errors.message && (
-          <p id="message-error" className="mt-1 text-xs text-red-600">
-            {errors.message}
-          </p>
-        )}
-      </div>
+      </FormField>
 
       <Button type="submit" size="lg">
         Enviar mensaje
