@@ -17,6 +17,12 @@ export const projects: Project[] = [
       "Módulos fabricados en taller con montaje en obra en tres fases, minimizando impacto ambiental y tiempos de ejecución.",
     image:
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
+    ],
     featured: true,
   },
   {
@@ -35,6 +41,11 @@ export const projects: Project[] = [
       "Estructura interior desmontable en madera laminada que respeta la envolvente original.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80",
+    ],
     featured: true,
   },
   {

@@ -5,6 +5,7 @@ import {
   getFeaturedProjects,
   getProjectBySlug,
   getProjectsByCategory,
+  getRelatedProjects,
 } from "@/lib/projects";
 
 describe("projects utilities", () => {
@@ -30,5 +31,12 @@ describe("projects utilities", () => {
   it("getProjectsByCategory filtra correctamente", () => {
     const modular = getProjectsByCategory("modular");
     expect(modular.every((p) => p.category === "modular")).toBe(true);
+  });
+
+  it("getRelatedProjects excluye el proyecto actual", () => {
+    const slug = "villa-modular-mediterranea";
+    const related = getRelatedProjects(slug);
+    expect(related.every((p) => p.slug !== slug)).toBe(true);
+    expect(related.length).toBeLessThanOrEqual(3);
   });
 });

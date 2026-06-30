@@ -22,3 +22,18 @@ export function getProjectsByCategory(
 export function getAllProjectSlugs(): string[] {
   return projects.map((project) => project.slug);
 }
+
+export function getRelatedProjects(
+  slug: string,
+  limit = 3,
+): Project[] {
+  const current = getProjectBySlug(slug);
+  if (!current) return [];
+
+  return projects
+    .filter(
+      (project) =>
+        project.slug !== slug && project.category === current.category,
+    )
+    .slice(0, limit);
+}

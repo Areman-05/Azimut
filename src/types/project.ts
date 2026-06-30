@@ -12,5 +12,6 @@ export type Project = {
   challenge: string;
   solution: string;
   image: string;
+  gallery?: string[];
   featured?: boolean;
 };
