@@ -4,6 +4,7 @@ import {
   StatsStrip,
   ProcessSection,
   FeaturedProjects,
+  TestimonialsSection,
 } from "@/components/home";
 import { getFeaturedProjects } from "@/lib/projects";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <ServicesPreview />
       <FeaturedProjects projects={featured} />
       <ProcessSection />
+      <TestimonialsSection />
     </>
   );
 }
