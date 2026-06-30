@@ -6,6 +6,7 @@ import {
   FeaturedProjects,
   TestimonialsSection,
   CTASection,
+  SustainabilitySection,
 } from "@/components/home";
 import { getFeaturedProjects } from "@/lib/projects";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <StatsStrip />
       <ServicesPreview />
       <FeaturedProjects projects={featured} />
+      <SustainabilitySection />
       <ProcessSection />
       <TestimonialsSection />
       <CTASection />

@@ -5,3 +5,4 @@ export { ProcessSection } from "./ProcessSection";
 export { FeaturedProjects } from "./FeaturedProjects";
 export { TestimonialsSection } from "./TestimonialsSection";
 export { CTASection } from "./CTASection";
+export { SustainabilitySection } from "./SustainabilitySection";

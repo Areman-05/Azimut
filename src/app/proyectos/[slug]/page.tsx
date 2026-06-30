@@ -4,11 +4,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Maximize, Clock } from "lucide-react";
 import { Container, Section } from "@/components/layout";
+import { ProjectGallery, RelatedProjects } from "@/components/projects";
 import { Button } from "@/components/ui";
 import {
   getAllProjectSlugs,
   getProjectBySlug,
+  getRelatedProjects,
 } from "@/lib/projects";
+import { createPageMetadata } from "@/lib/metadata";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -26,10 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Proyecto no encontrado" };
   }
 
-  return {
+  return createPageMetadata({
     title: project.title,
     description: project.description,
-  };
+    path: `/proyectos/${slug}`,
+  });
 }
 
 const categoryLabels = {
@@ -45,6 +49,8 @@ export default async function ProyectoDetailPage({ params }: PageProps) {
   if (!project) {
     notFound();
   }
+
+  const related = getRelatedProjects(slug);
 
   return (
     <>
@@ -77,6 +83,10 @@ export default async function ProyectoDetailPage({ params }: PageProps) {
 
       <Section>
         <Container>
+          <div className="mb-12">
+            <ProjectGallery project={project} />
+          </div>
+
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <p className="text-lg leading-relaxed">{project.description}</p>
@@ -137,6 +147,8 @@ export default async function ProyectoDetailPage({ params }: PageProps) {
           </div>
         </Container>
       </Section>
+
+      <RelatedProjects projects={related} currentTitle={project.title} />
     </>
   );
 }
