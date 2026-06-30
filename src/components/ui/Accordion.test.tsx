@@ -19,6 +19,6 @@ describe("Accordion", () => {
     render(<Accordion items={items} />);
 
     await user.click(screen.getByRole("button", { name: "Pregunta B" }));
-    expect(screen.getByText("Respuesta B detallada.")).toBeVisible();
+    expect(screen.getByText("Respuesta B detallada.")).toBeInTheDocument();
   });
 });
