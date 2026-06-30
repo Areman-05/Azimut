@@ -5,6 +5,7 @@ import {
   ProcessSection,
   FeaturedProjects,
   TestimonialsSection,
+  CTASection,
 } from "@/components/home";
 import { getFeaturedProjects } from "@/lib/projects";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <FeaturedProjects projects={featured} />
       <ProcessSection />
       <TestimonialsSection />
+      <CTASection />
     </>
   );
 }
