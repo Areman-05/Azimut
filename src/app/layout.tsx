@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
-import { Footer, Header } from "@/components/layout";
+import { Footer, Header, PageTransition } from "@/components/layout";
+import { images } from "@/config/images";
 import { siteConfig } from "@/config";
 import "./globals.css";
 
@@ -23,6 +24,14 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [{ url: images.hero.main, width: 1920, height: 1080, alt: siteConfig.name }],
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +46,9 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-cream font-sans text-charcoal">
         <Header />
-        <main className="flex-1 pt-20">{children}</main>
+        <main className="flex-1 pt-20">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>
