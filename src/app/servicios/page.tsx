@@ -1,7 +1,9 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Box, Hammer, Leaf } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Container, Section } from "@/components/layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Button } from "@/components/ui";
 import { services } from "@/data/services";
@@ -28,7 +30,13 @@ export default function ServiciosPage() {
       />
       <Section>
         <Container>
-          <div className="space-y-24">
+          <Breadcrumbs
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Servicios" },
+            ]}
+          />
+          <div className="mt-12 space-y-24">
             {services.map((service) => {
               const Icon = iconMap[service.id] ?? Box;
               return (
@@ -54,10 +62,14 @@ export default function ServiciosPage() {
                       <Button href="/contacto">Solicitar información</Button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center border border-border-light bg-sand p-12">
-                    <p className="text-center text-sm uppercase tracking-widest text-muted">
-                      Imagen de referencia — {service.title}
-                    </p>
+                  <div className="relative aspect-[4/3] overflow-hidden border border-border-light">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
                 </article>
               );

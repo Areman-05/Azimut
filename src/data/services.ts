@@ -1,5 +1,6 @@
 import { Box, Leaf, Hammer } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { images } from "@/config/images";
 
 export type Service = {
   id: string;
@@ -7,6 +8,7 @@ export type Service = {
   description: string;
   icon: LucideIcon;
   href: string;
+  image: string;
 };
 
 export const services: Service[] = [
@@ -17,6 +19,7 @@ export const services: Service[] = [
       "Sistemas constructivos modulares de alta precisión para viviendas y espacios comerciales con tiempos de ejecución reducidos.",
     icon: Box,
     href: "/servicios#modular",
+    image: images.services.modular,
   },
   {
     id: "sostenible",
@@ -25,6 +28,7 @@ export const services: Service[] = [
       "Materiales de bajo impacto, eficiencia energética y certificaciones ambientales integradas en cada fase del proyecto.",
     icon: Leaf,
     href: "/servicios#sostenible",
+    image: images.services.sostenible,
   },
   {
     id: "reformas",
@@ -33,5 +37,6 @@ export const services: Service[] = [
       "Rehabilitación y ampliación de espacios existentes con acabados de alto standing y atención al detalle artesanal.",
     icon: Hammer,
     href: "/servicios#reformas",
+    image: images.services.reformas,
   },
 ];

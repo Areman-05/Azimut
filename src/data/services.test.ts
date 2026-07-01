@@ -11,6 +11,7 @@ describe("services data", () => {
       expect(service.id).toBeTruthy();
       expect(service.title).toBeTruthy();
       expect(service.href).toMatch(/^\/servicios/);
+      expect(service.image).toMatch(/^\/images\//);
     }
   });
 });
