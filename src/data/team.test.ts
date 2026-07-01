@@ -11,6 +11,7 @@ describe("team data", () => {
       expect(member.name).toBeTruthy();
       expect(member.role).toBeTruthy();
       expect(member.bio.length).toBeGreaterThan(10);
+      expect(member.image).toMatch(/^\/images\//);
     }
   });
 });

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container, Section } from "@/components/layout";
 import { team } from "@/data/team";
 
@@ -20,11 +21,14 @@ export function TeamGrid() {
               key={member.id}
               className="border border-border-light bg-sand p-6"
             >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center bg-charcoal font-display text-xl text-cream">
-                {member.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
+              <div className="relative mb-6 aspect-square overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover grayscale transition-all duration-500 hover:grayscale-0"
+                  sizes="(max-width: 640px) 100vw, 25vw"
+                />
               </div>
               <h3 className="font-display text-lg uppercase tracking-wide">
                 {member.name}
