@@ -6,3 +6,5 @@ export { Select } from "./Select";
 export { FormField } from "./FormField";
 export { Accordion } from "./Accordion";
 export { FadeIn } from "./FadeIn";
+export { Logo } from "./Logo";
+export { Breadcrumbs } from "./Breadcrumbs";
