@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Container } from "./Container";
+import { Logo } from "@/components/ui/Logo";
+import { SocialLinks } from "./SocialLinks";
 import { footerNavigation, siteConfig } from "@/config";
 
 export function Footer() {
@@ -10,12 +12,13 @@ export function Footer() {
       <Container className="py-16 lg:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <p className="font-display text-lg uppercase tracking-[0.2em]">
-              {siteConfig.name}
-            </p>
+            <Logo variant="light" />
             <p className="mt-4 text-sm leading-relaxed text-muted">
               {siteConfig.tagline}
             </p>
+            <div className="mt-6">
+              <SocialLinks />
+            </div>
           </div>
 
           <div>
