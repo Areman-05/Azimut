@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ProjectsGrid } from "@/components/projects";
 import { getAllProjects } from "@/lib/projects";
 
@@ -22,7 +23,15 @@ export default function ProyectosPage() {
       />
       <Section>
         <Container>
-          <ProjectsGrid projects={projects} />
+          <Breadcrumbs
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Proyectos" },
+            ]}
+          />
+          <div className="mt-12">
+            <ProjectsGrid projects={projects} />
+          </div>
         </Container>
       </Section>
     </>

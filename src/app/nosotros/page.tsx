@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { TeamGrid } from "@/components/about";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui";
 import { siteConfig } from "@/config";
 
@@ -40,7 +41,13 @@ export default function NosotrosPage() {
 
       <Section>
         <Container>
-          <div className="grid gap-16 lg:grid-cols-2">
+          <Breadcrumbs
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Nosotros" },
+            ]}
+          />
+          <div className="mt-12 grid gap-16 lg:grid-cols-2">
             <div>
               <h2 className="font-display text-2xl uppercase tracking-tight">
                 Nuestra historia
