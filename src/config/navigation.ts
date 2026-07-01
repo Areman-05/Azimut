@@ -14,7 +14,7 @@ export const mainNavigation: NavItem[] = [
 export const footerNavigation = {
   empresa: [
     { label: "Sobre nosotros", href: "/nosotros" },
-    { label: "Proceso", href: "/nosotros#proceso" },
+    { label: "Proceso", href: "/#proceso" },
     { label: "Sostenibilidad", href: "/nosotros#sostenibilidad" },
   ],
   servicios: [
