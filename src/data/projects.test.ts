@@ -12,7 +12,7 @@ describe("projects data", () => {
 
     for (const project of projects) {
       expect(project.title).toBeTruthy();
-      expect(project.image).toMatch(/^https:\/\//);
+      expect(project.image).toMatch(/^\/images\//);
       expect(["residencial", "comercial", "modular"]).toContain(
         project.category,
       );

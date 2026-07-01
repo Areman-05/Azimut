@@ -1,4 +1,5 @@
 import type { Project } from "@/types";
+import { images } from "@/config/images";
 
 export const projects: Project[] = [
   {
@@ -15,14 +16,8 @@ export const projects: Project[] = [
       "Construir en parcela con pendiente pronunciada sin comprometer los plazos de entrega ni el paisaje circundante.",
     solution:
       "Módulos fabricados en taller con montaje en obra en tres fases, minimizando impacto ambiental y tiempos de ejecución.",
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-    ],
+    image: images.projects["villa-modular-mediterranea"].main,
+    gallery: [...images.projects["villa-modular-mediterranea"].gallery],
     featured: true,
   },
   {
@@ -39,13 +34,8 @@ export const projects: Project[] = [
       "Rehabilitar un edificio histórico del siglo XIX manteniendo su fachada protegida.",
     solution:
       "Estructura interior desmontable en madera laminada que respeta la envolvente original.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80",
-    ],
+    image: images.projects["oficinas-sostenibles-madrid"].main,
+    gallery: [...images.projects["oficinas-sostenibles-madrid"].gallery],
     featured: true,
   },
   {
@@ -62,8 +52,7 @@ export const projects: Project[] = [
       "Alcanzar estándar Passivhaus en clima continental con inviernos severos.",
     solution:
       "Envolvente de alto rendimiento térmico con ventilación mecánica de doble flujo.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    image: images.projects["residencia-pasiva-segovia"].main,
     featured: true,
   },
   {
@@ -80,8 +69,7 @@ export const projects: Project[] = [
       "Entregar fase uno operativa mientras se planificaba la ampliación de fase dos.",
     solution:
       "Sistema de ampliación modular con conexiones prefabricadas en fachada lateral.",
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80",
+    image: images.projects["centro-logistico-valencia"].main,
   },
   {
     slug: "apartamentos-boutique-bilbao",
@@ -97,8 +85,7 @@ export const projects: Project[] = [
       "Preservar elementos arquitectónicos originales mientras se modernizaba toda la instalación.",
     solution:
       "Restauración selectiva de molduras y suelos hidráulicos con instalaciones ocultas en falsos techos.",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+    image: images.projects["apartamentos-boutique-bilbao"].main,
   },
   {
     slug: "pabellon-modular-barcelona",
@@ -114,7 +101,6 @@ export const projects: Project[] = [
       "Cumplir normativa municipal de estructuras temporales en espacio público céntrico.",
     solution:
       "Base de cimentación reversible y módulos apilables transportables por carretera.",
-    image:
-      "https://images.unsplash.com/photo-1511814775-0469bccd2e8c?w=1200&q=80",
+    image: images.projects["pabellon-modular-barcelona"].main,
   },
 ];
