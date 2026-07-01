@@ -1,23 +1,25 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui";
+import { images } from "@/config/images";
 import { siteConfig } from "@/config";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-end overflow-hidden bg-charcoal text-cream">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
-        style={{
-          backgroundImage:
-            "linear-gradient(to bottom, rgba(18,18,18,0.3), rgba(18,18,18,0.95)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')",
-        }}
-        role="img"
-        aria-label="Edificio moderno de arquitectura contemporánea"
+      <Image
+        src={images.hero.main}
+        alt="Edificio moderno de arquitectura contemporánea"
+        fill
+        className="object-cover opacity-40"
+        priority
+        sizes="100vw"
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 to-charcoal/95" />
 
       <Container className="relative z-10 pb-16 pt-32 lg:pb-24 lg:pt-40">
         <motion.p
@@ -61,7 +63,12 @@ export function Hero() {
             <Button href="/proyectos" size="lg">
               Ver proyectos
             </Button>
-            <Button href="/contacto" variant="secondary" size="lg" className="border-cream text-cream hover:bg-cream hover:text-charcoal">
+            <Button
+              href="/contacto"
+              variant="secondary"
+              size="lg"
+              className="border-cream text-cream hover:bg-cream hover:text-charcoal"
+            >
               Solicitar presupuesto
             </Button>
           </motion.div>
