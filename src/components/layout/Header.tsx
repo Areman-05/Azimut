@@ -1,13 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "./Container";
 import { NavLink } from "./NavLink";
-import { Button } from "@/components/ui";
-import { mainNavigation, siteConfig } from "@/config";
+import { Button, Logo } from "@/components/ui";
+import { mainNavigation } from "@/config";
 import { cn } from "@/lib/cn";
 
 export function Header() {
@@ -16,12 +15,7 @@ export function Header() {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border-light/60 bg-cream/90 backdrop-blur-md">
       <Container as="div" className="flex h-20 items-center justify-between">
-        <Link
-          href="/"
-          className="font-display text-xl uppercase tracking-[0.2em] text-charcoal"
-        >
-          {siteConfig.name}
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
           {mainNavigation.map((item) => (
@@ -63,9 +57,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "border-b border-border-light py-4",
-                  )}
+                  className={cn("border-b border-border-light py-4")}
                 >
                   {item.label}
                 </NavLink>
