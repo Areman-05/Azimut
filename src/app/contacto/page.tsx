@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { ContactForm, FAQSection } from "@/components/contact";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { ContactForm, FAQSection, MapEmbed } from "@/components/contact";
 import { siteConfig } from "@/config";
 
 export const metadata: Metadata = {
@@ -21,7 +22,13 @@ export default function ContactoPage() {
       />
       <Section>
         <Container>
-          <div className="grid gap-16 lg:grid-cols-5">
+          <Breadcrumbs
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Contacto" },
+            ]}
+          />
+          <div className="mt-12 grid gap-16 lg:grid-cols-5">
             <div className="lg:col-span-3">
               <ContactForm />
             </div>
@@ -62,6 +69,9 @@ export default function ContactoPage() {
                   </div>
                 </li>
               </ul>
+              <div className="mt-10">
+                <MapEmbed />
+              </div>
             </aside>
           </div>
         </Container>
