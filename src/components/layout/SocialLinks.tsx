@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from "lucide-react";
+import { Share2, Rss } from "lucide-react";
 import { siteConfig } from "@/config";
 
 export function SocialLinks() {
@@ -6,12 +6,12 @@ export function SocialLinks() {
     {
       label: "LinkedIn",
       href: siteConfig.social.linkedin,
-      icon: Linkedin,
+      icon: Share2,
     },
     {
       label: "Instagram",
       href: siteConfig.social.instagram,
-      icon: Instagram,
+      icon: Rss,
     },
   ];
 
