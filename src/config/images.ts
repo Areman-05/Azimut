@@ -2,6 +2,7 @@ export const images = {
   hero: {
     main: "/images/hero/main.jpg",
   },
+  og: "/images/og.jpg",
   projects: {
     "villa-modular-mediterranea": {
       main: "/images/projects/villa-modular-mediterranea/main.jpg",
