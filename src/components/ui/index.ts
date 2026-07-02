@@ -8,3 +8,4 @@ export { Accordion } from "./Accordion";
 export { FadeIn } from "./FadeIn";
 export { Logo } from "./Logo";
 export { Breadcrumbs } from "./Breadcrumbs";
+export { ScrollToTop } from "./ScrollToTop";
