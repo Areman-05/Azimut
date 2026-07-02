@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ProjectsGrid } from "@/components/projects";
 import { getAllProjects } from "@/lib/projects";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Proyectos",
   description:
     "Portfolio de proyectos de arquitectura modular y construcción sostenible de Azimut Estructuras.",
-};
+  path: "/proyectos",
+});
 
 export default function ProyectosPage() {
   const projects = getAllProjects();
