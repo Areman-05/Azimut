@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { Metadata } from "next";
 import { Box, Hammer, Leaf } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Container, Section } from "@/components/layout";
@@ -7,12 +6,14 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Button } from "@/components/ui";
 import { services } from "@/data/services";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Servicios",
   description:
     "Arquitectura modular, construcción sostenible y reformas premium. Conoce los servicios de Azimut Estructuras.",
-};
+  path: "/servicios",
+});
 
 const iconMap: Record<string, LucideIcon> = {
   modular: Box,

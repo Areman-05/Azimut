@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import { TeamGrid } from "@/components/about";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui";
 import { siteConfig } from "@/config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Nosotros",
   description:
     "Conoce al equipo de Azimut Estructuras: arquitectura modular premium y construcción sostenible en España.",
-};
+  path: "/nosotros",
+});
 
 const values = [
   {
