@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
-import { Footer, Header, PageTransition } from "@/components/layout";
+import { Footer, Header, PageTransition, SkipLink } from "@/components/layout";
+import { JsonLd } from "@/components/seo";
+import { ScrollToTop } from "@/components/ui";
 import { images } from "@/config/images";
 import { siteConfig } from "@/config";
+import { getOrganizationJsonLd, getWebSiteJsonLd } from "@/lib/jsonld";
 import "./globals.css";
 
 const barlowCondensed = Barlow_Condensed({
@@ -30,7 +33,14 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: siteConfig.locale,
     type: "website",
-    images: [{ url: images.hero.main, width: 1920, height: 1080, alt: siteConfig.name }],
+    images: [
+      {
+        url: images.og,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
 };
 
@@ -45,11 +55,15 @@ export default function RootLayout({
       className={`${barlowCondensed.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-cream font-sans text-charcoal">
+        <JsonLd data={getOrganizationJsonLd()} />
+        <JsonLd data={getWebSiteJsonLd()} />
+        <SkipLink />
         <Header />
-        <main className="flex-1 pt-20">
+        <main id="main-content" className="flex-1 pt-20">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
