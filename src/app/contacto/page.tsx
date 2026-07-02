@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ContactForm, FAQSection, MapEmbed } from "@/components/contact";
 import { siteConfig } from "@/config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contacto",
   description:
     "Solicita presupuesto o información sobre tu proyecto con Azimut Estructuras.",
-};
+  path: "/contacto",
+});
 
 export default function ContactoPage() {
   return (

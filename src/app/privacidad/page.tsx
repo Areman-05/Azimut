@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { siteConfig } from "@/config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Política de privacidad",
-};
+  description: "Política de privacidad y tratamiento de datos de Azimut Estructuras.",
+  path: "/privacidad",
+});
 
 export default function PrivacidadPage() {
   return (

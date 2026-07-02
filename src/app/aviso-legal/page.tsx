@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
 import { Container, Section } from "@/components/layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { siteConfig } from "@/config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Aviso legal",
-};
+  description: "Aviso legal y condiciones de uso del sitio web de Azimut Estructuras.",
+  path: "/aviso-legal",
+});
 
 export default function AvisoLegalPage() {
   return (
