@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container, Section } from "@/components/layout";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { services } from "@/data/services";
 
 const containerVariants = {
@@ -23,14 +24,11 @@ export function ServicesPreview() {
   return (
     <Section variant="sand" id="servicios">
       <Container>
-        <div className="mb-16 max-w-2xl">
-          <p className="mb-4 text-xs uppercase tracking-[0.3em] text-terracotta">
-            Servicios
-          </p>
-          <h2 className="font-display text-4xl uppercase leading-tight tracking-tight lg:text-5xl">
-            Soluciones integrales para cada proyecto
-          </h2>
-        </div>
+        <SectionHeading
+          label="Servicios"
+          title="Soluciones integrales para cada proyecto"
+          className="mb-16"
+        />
 
         <motion.div
           variants={containerVariants}
